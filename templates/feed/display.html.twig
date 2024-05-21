@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Flux RSS{% endblock %}
+
+{% block body %}
+    <h1>Flux RSS</h1>
+    <ul>
+        {% for item in items %}
+            <li>
+                <h2>{{ item.title }}</h2>
+                <p>{{ item.description }}</p>
+                <p>Publié le {{ item.pubDate|date('d/m/Y') }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
